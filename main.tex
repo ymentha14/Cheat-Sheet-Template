@@ -1,0 +1,106 @@
+%&pdflatex
+\documentclass[10pt,ngerman,fleqn,usenames,dvipsnames]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[landscape,a4paper]{geometry}
+\geometry{verbose,tmargin=0.28cm,bmargin=0.28cm,lmargin=0.28cm,rmargin=0.28cm}
+\pagestyle{empty}
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{amsmath}
+
+\makeatletter
+
+\usepackage[ngerman]{babel}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{bbm}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+\usepackage[nosf]{kpfonts}
+\usepackage[t1]{sourcesanspro}
+%\usepackage[lf]{MyriadPro}
+%\usepackage[lf,minionint]{MinionPro}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+\usepackage{pdflscape}
+\usepackage{sectsty}
+\let\bar\overline
+
+
+\definecolor{myblue}{cmyk}{.8,.72,0,0.9}
+\definecolor{myorange}{cmyk}{0.6,0.5,1,0.8}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+%\everymath\expandafter{\the\everymath \color{myblue}}
+\everymath{\color{Cerulean}}
+\everydisplay\expandafter{\the\everydisplay \color{myblue}}
+\newcommand{\hilight}[1]{\textcolor{myorange}{#1}}
+
+\setlength{\columnseprule}{0.4pt} %uncomment if you want separating lines between cols
+
+
+%---------------------------------
+%% stuff for compact spacing
+
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\color{red}\sffamily\small\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\color{BurntOrange}\sffamily\bfseries}}
+
+
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{0ex}{0ex} %{indent from left side}{indent to top}{indent to bottom}
+\titlespacing{\subsection}{0pt}{0ex}{0ex}
+\titlespacing{\subsubsection}{0pt}{0ex}{0ex}
+
+\usepackage{parskip}
+\setlength{\parskip}{-1.3pt} %set space after paragraph
+
+\usepackage[
+	all=normal,
+	mathspacing=tight,
+	%wordspacing=tight,
+	%tracking=tight,
+	%charwidths=tight,
+	%leading=tight,
+	%indent=tight
+	]{savetrees}
+\usepackage[condensed,math]{iwona}
+
+\usepackage[light]{antpolt}
+\usepackage[T1]{fontenc}
+
+%\setlength{\columnsep}{1em} %space between columns
+
+\usepackage{enumitem}
+\setlist{nolistsep}
+
+\usepackage{setspace}
+\setstretch{0.1}
+
+
+%% stuff for compact spacing: End
+%---------------------------------
+
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\newif\ifchtsheet
+\chtsheettrue
+\begin{document}
+
+\begin{multicols*}{4}
+    \input{section1}
+    \input{section2}
+
+
+\end{multicols*}
+
+\end{document}
